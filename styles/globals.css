@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Optionally, enforce the font on code blocks as well */
+code, pre {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* Global overrides to ensure code backgrounds are transparent */
+.codeblock-container pre[class*='language-'],
+.codeblock-container code[class*='language-'] {
+  background-color: transparent !important;
+}
+
