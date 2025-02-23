@@ -1,12 +1,11 @@
-const withTM = (await import('next-transpile-modules')).default;
-
-const nextConfig = withTM(['some-package'])({
-  reactStrictMode: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // reactStrictMode: true,
   output: 'export',
   distDir: 'dist',
   images: {
-    unoptimized: true,
-  },
-});
+    'unoptimized': true
+  }
+};
 
 export default nextConfig;
