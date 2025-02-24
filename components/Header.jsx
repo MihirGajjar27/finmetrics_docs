@@ -7,8 +7,14 @@ import Link from "next/link";
 
 export default function Header({ isDarkMode, setIsDarkMode }) {
     return (
-        <div className={`sticky top-0 z-50 h-15 w-full border-b-1 border-solid ${isDarkMode ? "bg-gray-1000 border-gray-700" : "bg-white border-gray-300"}`}>
-            <div className={"flex justify-center"}>
+        <div
+            className={`
+            sticky top-0 z-50 h-15 w-full 
+            border-b border-solid 
+            ${isDarkMode ? "bg-gray-1000 border-gray-700" : "bg-white border-gray-300"}
+          `}
+        >
+        <div className={"flex justify-center"}>
                 <div className="flex flex-row flex-nowrap w-full p-3 justify-between max-w-7xl">
                     <Link href={'/'}>
                         <div className="flex flex-row flex-nowrap w-96 text-xl justify-start">
