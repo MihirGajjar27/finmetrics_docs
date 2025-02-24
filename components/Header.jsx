@@ -10,8 +10,8 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
         <div
             className={`
             sticky top-0 z-50 h-15 w-full 
-            border-b border-solid 
-            ${isDarkMode ? "bg-gray-1000 border-gray-700" : "bg-white border-gray-300"}
+            border-b-1 border-solid 
+            ${isDarkMode ? "bg-gray-1000 border-b-gray-700" : "bg-white border-b-gray-300"}
           `}
         >
         <div className={"flex justify-center"}>
