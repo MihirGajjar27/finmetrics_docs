@@ -16,8 +16,8 @@ export default function Tabs({ children, isDark = false, tabs = [] }) {
                                 onClick={() => setActiveTab(idx)}
                                 className={`pb-3 px-2 text-sm sm:text-base ${
                                     isActive
-                                        ? `border-b-2 border-x-transparent border-t-transparent border-solid`
-                                        : ``
+                                        ? `border-b-2 border-x-transparent border-t-transparent border-solid border-current`
+                                        : `border-b-transparent border-t-transparent border-x-transparent`
                                 }`}
                             >
                                 {tab}
