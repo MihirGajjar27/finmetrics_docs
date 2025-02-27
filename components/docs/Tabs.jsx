@@ -7,7 +7,7 @@ export default function Tabs({ children, isDark = false, tabs = [] }) {
 
     return (
         <div>
-            <div className={`flex space-x-4 border-b-1 border-solid ${lineColor}`}>
+            <div className={`flex space-x-4 border-b-1 border-solid border-x-transparent border-t-transparent ${lineColor}`}>
                 {tabs.map((tab, idx) => {
                     const isActive = idx === activeTab;
                     return (
@@ -16,7 +16,7 @@ export default function Tabs({ children, isDark = false, tabs = [] }) {
                             onClick={() => setActiveTab(idx)}
                             className={`pb-3 px-2 text-sm sm:text-base ${
                                 isActive
-                                    ? `border-b-2 border-solid border-current`
+                                    ? `border-b-2 border-x-transparent border-t-transparent border-solid border-current`
                                     : ``
                             }`}
                         >
