@@ -15,6 +15,9 @@ import TextLine from "@/components/docs/TextLine";
 import CodeBlock from "@/components/docs/CodeBlock";
 import Tabs from "@/components/docs/Tabs"
 
+const pythonInstallation = `pip install finmetrics`;
+const nodeInstallation = `npm install finmetrics`
+
 export default function Home() {
     // Lazy initializer: Only run on the client (after window exists).
     const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -41,8 +44,9 @@ export default function Home() {
     if (!mounted) return null;
 
     const links = {
+        'Python Installation': 'python-installation',
+        'Node Js Installation': 'node-installation'
     }
-
 
     return (
         <div
@@ -56,6 +60,19 @@ export default function Home() {
                 <Page>
                     <DocPath isDark={isDarkMode} filepathArray={["Getting Started", "Installation"]}/>
                     <PageTitle>Installation</PageTitle>
+                    <Title id={"python-installation"}>Python Installation</Title>
+                    <Paragraph isDark={isDarkMode}>
+                        Finmetrics currently has a python package you can install through pip and a node js
+                        library you can install through npm.
+                    </Paragraph>
+                    <Paragraph isDark={isDarkMode}>
+                        To install Finmetrics in your project using pip, navigate to your project directly and execute:
+                    </Paragraph>
+                    <CodeBlock code={pythonInstallation} isDark={isDarkMode} language={"shell"}/>
+                    <Paragraph isDark={isDarkMode}>
+                        To install Finmetrics in your project using npm, navigate to your project directly and execute:
+                    </Paragraph>
+                    <CodeBlock code={nodeInstallation} isDark={isDarkMode} language={"shell"}/>
                 </Page>
                 <OnThisPage isDark={isDarkMode} links={links}/>
             </div>

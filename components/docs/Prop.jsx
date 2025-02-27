@@ -16,7 +16,7 @@ export default function Prop({children, isDark, color='gray'}) {
     return(
         <div className={"flex-nowrap inline-flex align-middle w-fit"}>
             <span className={`px-2 py-1.5 ${isDark ? c.dark : c.light}
-                border-1 border-solid rounded-lg text-sm`}>
+                border-1 border-solid rounded-lg text-xs sm:text-sm`}>
                 {children}
             </span>
         </div>

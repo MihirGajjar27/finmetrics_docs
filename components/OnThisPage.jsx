@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const OnThisPage = ({ links, isDark }) => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
     const handleLinkClick = (e, href) => {
         e.preventDefault();
 
@@ -11,7 +16,7 @@ const OnThisPage = ({ links, isDark }) => {
                 const header = document.querySelector("header");
                 const headerOffset = header ? header.offsetHeight : 0;
                 const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 20; // extra 20px spacing
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10;
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: "smooth",
@@ -23,7 +28,7 @@ const OnThisPage = ({ links, isDark }) => {
     };
 
     return (
-        <div className="p-5 flex flex-col w-72 ml-10 mt-4">
+        isClient && <div className="p-5 flex-col w-72 ml-10 mt-4 hidden xl:flex">
             <div className={`sticky top-24 p-5 rounded-lg border-1 border-solid ${isDark ? "bg-gray-950 border-gray-400" : "bg-gray-100 border-gray-500"} h-fit w-full`}>
                 <h3 className={`text-lg font-medium mb-4 ${isDark ? "text-gray-300" : "text-gray-600"}`}>On This Page</h3>
                 <ul className="space-y-0">
@@ -32,9 +37,7 @@ const OnThisPage = ({ links, isDark }) => {
                             <a
                                 href={href}
                                 onClick={(e) => handleLinkClick(e, href)}
-                                className={`block py-1 px-3 ${
-                                    isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-1000"
-                                }`}
+                                className={`block py-1 px-3 ${isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-1000"}`}
                             >
                                 {title}
                             </a>

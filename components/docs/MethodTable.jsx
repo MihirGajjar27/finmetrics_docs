@@ -7,7 +7,7 @@ export default function MethodTable({ children, headers }) {
                 <thead>
                 <tr>
                     {headers.map((header, index) => (
-                        <th key={index} className="py-2 px-2 text-left font-light">
+                        <th key={index} className="py-1.5 px-1.5 sm:py-2 sm:px-2 text-left font-light transition-all duration-300">
                             {header}
                         </th>
                     ))}

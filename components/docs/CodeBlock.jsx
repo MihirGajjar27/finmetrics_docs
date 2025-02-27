@@ -3,6 +3,7 @@ import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
 import javascript from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
 import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash"
+import shell from "react-syntax-highlighter/dist/esm/languages/prism/powershell"
 import oneDark from "react-syntax-highlighter/dist/esm/styles/prism/one-dark";
 import oneLight from "react-syntax-highlighter/dist/esm/styles/prism/one-light";
 import { MdOutlineContentCopy } from "react-icons/md";
@@ -10,12 +11,12 @@ import { IoMdCheckmark } from "react-icons/io";
 
 SyntaxHighlighter.registerLanguage("python", python);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
-SyntaxHighlighter.registerLanguage("bash", javascript);
+SyntaxHighlighter.registerLanguage("shell", shell);
 
 export default function CodeBlock({ code, language, isDark }) {
     const [copied, setCopied] = useState(false);
 
-    const langMap = { py: "python", js: "javascript", b: "bash" };
+    const langMap = { py: "python", js: "javascript", sh: "shell" };
     const actualLanguage = langMap[language] || language;
 
     const containerClasses = isDark
@@ -36,7 +37,7 @@ export default function CodeBlock({ code, language, isDark }) {
 
     const iconClasses = isDark
         ? "bg-gray-1000 border-0 border-gray-500"
-        : "bg-white border-1 border-solid border-gray-300";
+        : "bg-white border-1 border-solid border-gray-200";
 
     return (
         <div className="rounded-lg relative transition-all duration-300 pt-5 pb-7">
@@ -44,8 +45,8 @@ export default function CodeBlock({ code, language, isDark }) {
                 <SyntaxHighlighter
                     language={actualLanguage}
                     style={isDark ? oneDark : oneLight}
-                    customStyle={{ backgroundColor: "transparent", padding: 1, margin: 1,
-                        fontFamily: "'Space Grotesk', sans-serif", fontSize: 16 }}
+                    customStyle={{ backgroundColor: "transparent", padding: 13, margin: 1,
+                        fontFamily: "'Space Grotesk', sans-serif", fontSize: 15 }}
                 >
                     {code}
                 </SyntaxHighlighter>

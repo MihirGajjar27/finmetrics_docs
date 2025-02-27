@@ -46,14 +46,14 @@ const colorClasses = {
 export default function Note({ children, title, isDark, color = "gray" }) {
     const classes = colorClasses[color] || colorClasses.gray;
     return (
-        <div className="w-full pb-7">
+        <div className="w-full pb-7 transition-all duration-300">
             <div
                 className={`flex flex-col p-5 border-1 border-solid ${isDark ? `${classes.borderDark} ${classes.bgDark}` : `${classes.borderLight} ${classes.bgLight}`} rounded-lg`}
             >
-            <span className={`text-md font-medium ${isDark ? classes.textDark : classes.textLight}`}>
+            <span className={`text-sm sm:text-md font-medium ${isDark ? classes.textDark : classes.textLight}`}>
               {title}
             </span>
-                <p className={`pt-3 text-sm ${isDark ? classes.textDark : classes.textLight}`}>{children}</p>
+                <p className={`pt-3 text-xs sm:text-sm ${isDark ? classes.textDark : classes.textLight}`}>{children}</p>
             </div>
         </div>
     );

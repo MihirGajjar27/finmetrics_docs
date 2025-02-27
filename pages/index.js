@@ -13,6 +13,8 @@ import MethodTable from "@/components/docs/MethodTable";
 import MethodRow from "@/components/docs/MethodRow";
 import TextLine from "@/components/docs/TextLine";
 import CodeBlock from "@/components/docs/CodeBlock";
+import LinkProp from "@/components/docs/LinkProp";
+import Link from "next/link";
 
 export default function Home() {
     // Lazy initializer: Only run on the client (after window exists).
@@ -66,10 +68,43 @@ export default function Home() {
                         This package can be used by almost anyone from casual investors to professionals in finance.
                     </Paragraph>
 
-                    <Title id={'methods'}></Title>
+                    <Title id={'methods'}>Methods</Title>
+                    <MethodTable headers={["Method", "Description"]}>
+                        <MethodRow isDark={isDarkMode}>
+                            <LinkProp isDark={isDarkMode} color={'blue'} link={'/rates-and-returns#holding-period-return'}>
+                                holding_period_return()
+                            </LinkProp>
+                            <TextLine isDark={isDarkMode}>Calculates the holding period return for a single period</TextLine>
+                        </MethodRow>
+                        <MethodRow isDark={isDarkMode}>
+                            <LinkProp isDark={isDarkMode} color={'blue'} link={'/rates-and-returns#holding_period-return-multi-period'}>
+                                holding_period_return_multi_period()
+                            </LinkProp>
+                            <TextLine isDark={isDarkMode}>Calculates the holding period return for multiple periods</TextLine>
+                        </MethodRow>
+                        <MethodRow isDark={isDarkMode}>
+                            <LinkProp isDark={isDarkMode} color={'blue'} link={'/rates-and-returns#arithmetic-return'}>
+                                arithmetic_return()
+                            </LinkProp>
+                            <TextLine isDark={isDarkMode}>Calculates the arithmetic return for a series of values</TextLine>
+                        </MethodRow>
+                        <MethodRow isDark={isDarkMode}>
+                            <LinkProp isDark={isDarkMode} color={'blue'} link={'/rates-and-returns#geometric-return'}>
+                                geometric_return()
+                            </LinkProp>
+                            <TextLine isDark={isDarkMode}>Calculates the geometric return for a series of values</TextLine>
+                        </MethodRow>
+                        <MethodRow isDark={isDarkMode}>
+                            <LinkProp isDark={isDarkMode} color={'blue'} link={'/rates-and-returns#harmonic-mean'}>
+                                harmonic_mean()
+                            </LinkProp>
+                            <TextLine isDark={isDarkMode}>Calculates the harmonic mean for a series of values</TextLine>
+                        </MethodRow>
+                    </MethodTable>
 
                 </Page>
                 <OnThisPage isDark={isDarkMode} links={links}/>
+
             </div>
         </div>
     );

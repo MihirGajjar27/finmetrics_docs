@@ -6,7 +6,7 @@ export default function DocPath({ isDark, filepathArray }) {
     const lastTextColor = isDark ? "text-white" : "text-black";
 
     return (
-        <div className="flex flex-row flex-nowrap items-center py-5">
+        <div className="flex flex-row flex-nowrap items-center py-5 text-sm sm:text-base transition-all duration-300">
             {filepathArray.map((item, index) => (
                 <React.Fragment key={index}>
                     <span
