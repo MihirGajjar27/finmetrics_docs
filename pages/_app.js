@@ -11,6 +11,7 @@ function App({ Component, pageProps }) {
   return (
       <div className={spaceGrotesk.className}>
         <Component {...pageProps} />
+          <SpeedInsights />
       </div>
   );
 }
