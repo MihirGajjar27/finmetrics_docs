@@ -15,6 +15,7 @@ import TextLine from "@/components/docs/TextLine";
 import CodeBlock from "@/components/docs/CodeBlock";
 import LinkProp from "@/components/docs/LinkProp";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     // Lazy initializer: Only run on the client (after window exists).
@@ -106,6 +107,7 @@ export default function Home() {
                 <OnThisPage isDark={isDarkMode} links={links}/>
 
             </div>
+            <Footer isDark={isDarkMode}/>
         </div>
     );
 }

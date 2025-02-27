@@ -14,6 +14,7 @@ import MethodRow from "@/components/docs/MethodRow";
 import TextLine from "@/components/docs/TextLine";
 import CodeBlock from "@/components/docs/CodeBlock";
 import Tabs from "@/components/docs/Tabs"
+import Footer from "@/components/Footer";
 
 const pythonInstallation = `pip install finmetrics`;
 const nodeInstallation = `npm install finmetrics`
@@ -76,6 +77,7 @@ export default function Home() {
                 </Page>
                 <OnThisPage isDark={isDarkMode} links={links}/>
             </div>
+            <Footer isDark={isDarkMode}/>
         </div>
     );
 }
