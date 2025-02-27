@@ -76,8 +76,9 @@ export default function Home() {
                     <CodeBlock code={nodeInstallation} isDark={isDarkMode} language={"shell"}/>
                 </Page>
                 <OnThisPage isDark={isDarkMode} links={links}/>
+
             </div>
-            <Footer isDark={isDarkMode}/>
+            {/*<Footer isDark={isDarkMode}/>*/}
         </div>
     );
 }
